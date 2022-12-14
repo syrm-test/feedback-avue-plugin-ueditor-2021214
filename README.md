@@ -30,7 +30,8 @@ new Vue({
 > provide an export named 'default' (at plugin.js?v=42c65da2:1:8)
 >
 > 控制台错误日志指向源码
-![](doc\1.png)
+
+![屏幕截图](/doc/1.png)
 
 > node_modules/avue-plugin-ueditor/packages/ueditor/src/plugin.js
 
