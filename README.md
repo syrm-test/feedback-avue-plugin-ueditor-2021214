@@ -28,6 +28,7 @@ new Vue({
 
 > Uncaught SyntaxError: The requested module '/node_modules/.pnpm/wangeditor@4.7.15/node_modules/wangeditor/dist/wangEditor.js?v=42c65da2' does not
 > provide an export named 'default' (at plugin.js?v=42c65da2:1:8)
+>
 > 控制台错误日志指向源码
 ![](doc\1.png)
 
