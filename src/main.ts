@@ -1,11 +1,11 @@
 import App from '@/App.vue'
+// @ts-ignore
+import Editor from 'avue-plugin-ueditor'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-// @ts-ignore
-// import Editor from 'avue-plugin-ueditor'
 import Vue from 'vue'
 
-// Vue.use(Editor)
+Vue.use(Editor)
 Vue.use(Element)
 
 new Vue({
