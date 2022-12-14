@@ -1,6 +1,6 @@
 # 简介
 
-`vite` + `vue2` (`@vitejs/plugin-vue2` 提供支持) + `typescript` 项目
+`vite` + `vue2` ([@vitejs/plugin-vue2](https://github.com/vitejs/vite-plugin-vue2) 提供支持) + `typescript` 项目
 
 # 问题
 
@@ -24,10 +24,39 @@ new Vue({
 }).$mount('#app')
 ```
 
-3. 此时浏览器控制台出现一条错误日志:
+3. 此时浏览器控制台出现一条错误日志 整个页面崩溃无法使用
 
 > Uncaught SyntaxError: The requested module '/node_modules/.pnpm/wangeditor@4.7.15/node_modules/wangeditor/dist/wangEditor.js?v=42c65da2' does not
 > provide an export named 'default' (at plugin.js?v=42c65da2:1:8)
-
-
+> 控制台错误日志指向源码
 ![](doc\1.png)
+
+> node_modules/avue-plugin-ueditor/packages/ueditor/src/plugin.js
+
+```js
+import E from 'wangeditor'
+
+const { BtnMenu } = E
+export default (safe) => {
+    return class Plugin extends BtnMenu {
+        constructor(editor) {
+            const $elem = E.$(
+                `<div class="w-e-menu" data-title="源代码">
+              <span class="wangEditor_html" >
+              Html
+              </span>
+            </div>`
+            )
+            super($elem, editor)
+        }
+
+        clickHandler() {
+            safe.show = true;
+        }
+
+        tryChangeActive() {
+            this.active()
+        }
+    }
+}
+```
