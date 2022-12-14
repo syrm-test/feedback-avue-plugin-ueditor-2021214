@@ -1,0 +1,72 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "allowJs": true,
+        // "checkJs": true,
+        "strict": true,
+        "jsx": "preserve",
+        // 抑制隐式任何索引错误
+        // "suppressImplicitAnyIndexErrors": true,
+        // 启用实验性装饰器
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "useDefineForClassFields": true,
+        "sourceMap": true,
+        "isolatedModules": true,
+        "noImplicitThis": true,
+        // 生成相应的“.d.ts”文件
+        "declaration": true,
+        // 为每个对应的“.d.ts”文件生成一个源映射。
+        "declarationMap": true,
+        "resolveJsonModule": true,
+        // 没有隐式返回
+        "noImplicitReturns": true,
+        // 没有隐式 any
+        // "noImplicitAny": false,
+        // 没有隐式覆盖
+        "noImplicitOverride": true,
+        // 严格 Null 检查
+        "strictNullChecks": true,
+        // TS6133 禁止没有使用的定义
+        "noUnusedLocals": false,
+        // TS2564 严格的属性初始化
+        "strictPropertyInitialization": false,
+        "importHelpers": true,
+        "baseUrl": ".",
+        "types": [
+            "webpack-env",
+            "node"
+        ],
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
+}
